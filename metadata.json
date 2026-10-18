@@ -1,0 +1,8 @@
+{
+  "name": "Prajwal: The Maker Kid's Crayon Chronicles",
+  "description": "An interactive hand-drawn crayon scrolling animation story & portfolio of 8-year-old inventor Prajwal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

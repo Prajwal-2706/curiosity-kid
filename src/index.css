@@ -1,0 +1,387 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --paper-bg: #fffdf5;
+    --paper-lines: #e2e8f0;
+    --crayon-red: #ff4757;
+    --crayon-blue: #1e90ff;
+    --crayon-yellow: #ffa502;
+    --crayon-green: #2ed573;
+    --crayon-purple: #9b59b6;
+    --crayon-orange: #ff7f50;
+    --pencil-lead: #2f3542;
+  }
+
+  body {
+    background-color: var(--paper-bg);
+    color: var(--pencil-lead);
+    font-family: 'Patrick Hand', cursive, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom handwritten fonts */
+  .font-kalam {
+    font-family: 'Kalam', cursive, sans-serif;
+  }
+  .font-patrick {
+    font-family: 'Patrick Hand', cursive, sans-serif;
+  }
+  .font-gaegu {
+    font-family: 'Gaegu', cursive, sans-serif;
+  }
+  .font-gloria {
+    font-family: 'Gloria Hallelujah', cursive, sans-serif;
+  }
+
+  /* School notebook grid background */
+  .bg-notebook-grid {
+    background-color: #fffdf7;
+    background-image: 
+      linear-gradient(to right, rgba(147, 197, 253, 0.16) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(147, 197, 253, 0.16) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Notebook red margin line */
+  .notebook-margin {
+    border-left: 2px solid rgba(248, 113, 113, 0.35);
+  }
+
+  /* Soft, completely Borderless Crayon Cards */
+  .crayon-card-soft {
+    background-color: rgba(255, 253, 247, 0.96);
+    border: none !important;
+    border-radius: 255px 22px 225px 20px/20px 225px 22px 255px;
+    box-shadow: 0 10px 30px -10px rgba(47, 53, 66, 0.08);
+  }
+
+  /* Organic borderless styles */
+  .crayon-border {
+    border: none !important;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+
+  .crayon-border-thick {
+    border: none !important;
+    border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+  }
+
+  .crayon-box-shadow {
+    box-shadow: 0 8px 20px -6px rgba(47, 53, 66, 0.07);
+  }
+
+  .crayon-box-shadow-lg {
+    box-shadow: 0 16px 36px -12px rgba(47, 53, 66, 0.09);
+  }
+
+  /* Tape effect on scrapbook papers */
+  .washi-tape {
+    position: relative;
+  }
+  .washi-tape::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20%;
+    width: 60px;
+    height: 20px;
+    background-color: rgba(254, 240, 138, 0.65);
+    transform: rotate(-3deg);
+    z-index: 10;
+    pointer-events: none;
+    border-radius: 3px;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     AUTHENTIC WAX CRAYON BUTTONS: UNEVEN, CRACKING, HAND-COLORED WAX
+     - Multi-tonal pigment blotches
+     - Repeating linear & angled micro-cracks
+     - Uneven pressure striations
+     - Absolutely no hard border lines
+     ───────────────────────────────────────────────────────────── */
+  .crayon-btn-red {
+    border: none !important;
+    background-color: #ff3b4e;
+    background-image: 
+      /* Micro-cracks & rough wax fissures */
+      repeating-linear-gradient(
+        118deg,
+        rgba(255, 255, 255, 0.22) 0px,
+        rgba(255, 255, 255, 0.22) 2px,
+        transparent 2px,
+        transparent 6px
+      ),
+      repeating-linear-gradient(
+        24deg,
+        rgba(150, 10, 25, 0.25) 0px,
+        rgba(150, 10, 25, 0.25) 1.5px,
+        transparent 1.5px,
+        transparent 8px
+      ),
+      /* Uneven crayon stroke pressure */
+      linear-gradient(
+        135deg,
+        #ff5e6c 0%,
+        #ff3b4e 35%,
+        #ee2c3c 70%,
+        #c2182b 100%
+      );
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    box-shadow: 
+      0 6px 16px rgba(238, 44, 60, 0.35),
+      inset 0 2px 4px rgba(255, 255, 255, 0.3),
+      inset 0 -2px 5px rgba(120, 0, 15, 0.35);
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(100, 0, 15, 0.4);
+    font-family: 'Kalam', cursive;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .crayon-btn-red:hover {
+    transform: scale(1.03) rotate(-0.6deg);
+    box-shadow: 
+      0 9px 22px rgba(238, 44, 60, 0.45),
+      inset 0 2px 5px rgba(255, 255, 255, 0.4);
+  }
+  .crayon-btn-red:active {
+    transform: scale(0.97) rotate(0deg);
+  }
+
+  .crayon-btn-yellow {
+    border: none !important;
+    background-color: #ffa502;
+    background-image: 
+      /* Micro-cracks & rough wax fissures */
+      repeating-linear-gradient(
+        112deg,
+        rgba(255, 255, 255, 0.3) 0px,
+        rgba(255, 255, 255, 0.3) 2px,
+        transparent 2px,
+        transparent 7px
+      ),
+      repeating-linear-gradient(
+        -32deg,
+        rgba(180, 83, 9, 0.22) 0px,
+        rgba(180, 83, 9, 0.22) 1.5px,
+        transparent 1.5px,
+        transparent 9px
+      ),
+      /* Uneven crayon stroke pressure */
+      linear-gradient(
+        135deg,
+        #fec030 0%,
+        #ffa502 40%,
+        #f59e0b 75%,
+        #d97706 100%
+      );
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    box-shadow: 
+      0 6px 16px rgba(245, 158, 11, 0.35),
+      inset 0 2px 4px rgba(255, 255, 255, 0.4),
+      inset 0 -2px 5px rgba(180, 83, 9, 0.3);
+    color: #1e293b;
+    text-shadow: 0.5px 0.5px 0px rgba(255, 255, 255, 0.6);
+    font-family: 'Kalam', cursive;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .crayon-btn-yellow:hover {
+    transform: scale(1.03) rotate(0.6deg);
+    box-shadow: 
+      0 9px 22px rgba(245, 158, 11, 0.45),
+      inset 0 2px 5px rgba(255, 255, 255, 0.5);
+  }
+  .crayon-btn-yellow:active {
+    transform: scale(0.97) rotate(0deg);
+  }
+
+  .crayon-btn-green {
+    border: none !important;
+    background-color: #2ed573;
+    background-image: 
+      /* Micro-cracks & rough wax fissures */
+      repeating-linear-gradient(
+        115deg,
+        rgba(255, 255, 255, 0.25) 0px,
+        rgba(255, 255, 255, 0.25) 2px,
+        transparent 2px,
+        transparent 6px
+      ),
+      repeating-linear-gradient(
+        -25deg,
+        rgba(15, 90, 45, 0.22) 0px,
+        rgba(15, 90, 45, 0.22) 1.5px,
+        transparent 1.5px,
+        transparent 8px
+      ),
+      /* Uneven crayon stroke pressure */
+      linear-gradient(
+        135deg,
+        #48e288 0%,
+        #2ed573 38%,
+        #20bf6b 72%,
+        #109648 100%
+      );
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    box-shadow: 
+      0 6px 16px rgba(46, 213, 115, 0.35),
+      inset 0 2px 4px rgba(255, 255, 255, 0.35),
+      inset 0 -2px 5px rgba(16, 150, 72, 0.35);
+    color: #0b2915;
+    text-shadow: 0.5px 0.5px 0px rgba(255, 255, 255, 0.4);
+    font-family: 'Kalam', cursive;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .crayon-btn-green:hover {
+    transform: scale(1.03) rotate(-0.5deg);
+    box-shadow: 
+      0 9px 22px rgba(46, 213, 115, 0.45),
+      inset 0 2px 5px rgba(255, 255, 255, 0.45);
+  }
+  .crayon-btn-green:active {
+    transform: scale(0.97) rotate(0deg);
+  }
+
+  .crayon-btn-blue {
+    border: none !important;
+    background-color: #1e90ff;
+    background-image: 
+      /* Micro-cracks & rough wax fissures */
+      repeating-linear-gradient(
+        118deg,
+        rgba(255, 255, 255, 0.25) 0px,
+        rgba(255, 255, 255, 0.25) 2px,
+        transparent 2px,
+        transparent 6px
+      ),
+      repeating-linear-gradient(
+        -30deg,
+        rgba(10, 50, 140, 0.25) 0px,
+        rgba(10, 50, 140, 0.25) 1.5px,
+        transparent 1.5px,
+        transparent 8px
+      ),
+      /* Uneven crayon stroke pressure */
+      linear-gradient(
+        135deg,
+        #4dabf7 0%,
+        #1e90ff 36%,
+        #0984e3 74%,
+        #0652dd 100%
+      );
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    box-shadow: 
+      0 6px 16px rgba(30, 144, 255, 0.35),
+      inset 0 2px 4px rgba(255, 255, 255, 0.35),
+      inset 0 -2px 5px rgba(6, 82, 221, 0.35);
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(6, 82, 221, 0.5);
+    font-family: 'Kalam', cursive;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .crayon-btn-blue:hover {
+    transform: scale(1.03) rotate(0.6deg);
+    box-shadow: 
+      0 9px 22px rgba(30, 144, 255, 0.45),
+      inset 0 2px 5px rgba(255, 255, 255, 0.45);
+  }
+  .crayon-btn-blue:active {
+    transform: scale(0.97) rotate(0deg);
+  }
+
+  .crayon-btn-purple {
+    border: none !important;
+    background-color: #9b59b6;
+    background-image: 
+      repeating-linear-gradient(
+        115deg,
+        rgba(255, 255, 255, 0.24) 0px,
+        rgba(255, 255, 255, 0.24) 2px,
+        transparent 2px,
+        transparent 6px
+      ),
+      repeating-linear-gradient(
+        -28deg,
+        rgba(60, 10, 80, 0.25) 0px,
+        rgba(60, 10, 80, 0.25) 1.5px,
+        transparent 1.5px,
+        transparent 8px
+      ),
+      linear-gradient(
+        135deg,
+        #b07cc6 0%,
+        #9b59b6 38%,
+        #8e44ad 75%,
+        #6c1d8c 100%
+      );
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    box-shadow: 
+      0 6px 16px rgba(155, 89, 182, 0.35),
+      inset 0 2px 4px rgba(255, 255, 255, 0.35),
+      inset 0 -2px 5px rgba(108, 29, 140, 0.35);
+    color: #ffffff;
+    font-family: 'Kalam', cursive;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .crayon-btn-slate {
+    border: none !important;
+    background-color: #e2e8f0;
+    background-image: 
+      repeating-linear-gradient(
+        112deg,
+        rgba(255, 255, 255, 0.4) 0px,
+        rgba(255, 255, 255, 0.4) 2px,
+        transparent 2px,
+        transparent 6px
+      ),
+      repeating-linear-gradient(
+        -30deg,
+        rgba(71, 85, 105, 0.16) 0px,
+        rgba(71, 85, 105, 0.16) 1.5px,
+        transparent 1.5px,
+        transparent 8px
+      ),
+      linear-gradient(
+        135deg,
+        #f8fafc 0%,
+        #e2e8f0 45%,
+        #cbd5e1 80%,
+        #94a3b8 100%
+      );
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    box-shadow: 
+      0 4px 12px rgba(71, 85, 105, 0.14),
+      inset 0 2px 4px rgba(255, 255, 255, 0.5),
+      inset 0 -2px 4px rgba(71, 85, 105, 0.15);
+    color: #1e293b;
+    font-family: 'Kalam', cursive;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .crayon-btn-slate:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(71, 85, 105, 0.2);
+  }
+  .crayon-btn-slate:active {
+    transform: scale(0.98);
+  }
+
+  /* Crayon wax scribble texture for panels & tags */
+  .crayon-tag {
+    border: none !important;
+    border-radius: 255px 10px 225px 10px/10px 225px 10px 255px;
+  }
+
+  /* Wobbly hand-drawn effect */
+  @keyframes doodleWiggle {
+    0%, 100% {
+      transform: rotate(-0.4deg) scale(1);
+    }
+    50% {
+      transform: rotate(0.4deg) scale(1.002);
+    }
+  }
+
+  .animate-doodle {
+    animation: doodleWiggle 3.5s ease-in-out infinite;
+  }
+}
